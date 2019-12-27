@@ -1,0 +1,37 @@
+name: life
+version: 0.1.0
+
+authors:
+  - Bill Tihen <btihen@gmail.com>
+
+targets:
+  life:
+    main: src/life.cr
+
+crystal: 0.32.1
+
+dependencies:
+  lucky:
+    github: luckyframework/lucky
+    version: ~> 0.18.2
+  authentic:
+    github: luckyframework/authentic
+    version: ~> 0.5.0
+  carbon:
+    github: luckyframework/carbon
+    version: ~> 0.1.1
+  dotenv:
+    github: gdotdesign/cr-dotenv
+    version: 0.3.0
+  lucky_flow:
+    github: luckyframework/lucky_flow
+    version: ~> 0.6.0
+  jwt:
+    github: crystal-community/jwt
+    version: ~> 1.2.0  
+  icr:
+    github: crystal-community/icr
+    branch: master
+  i18n:
+    github: vladfaust/i18n.cr
+    version: ~> 0.1.1
