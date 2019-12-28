@@ -1,2 +1,14 @@
+# en.yml
 en:
-  sign_in: login
+  auth:
+    sign_in: "Sign-In"
+    sign_up: "Sign-up"
+    update_pwd: "Update Password"
+    reset_pwd_request: "Reset Password"
+  me:
+    email: Mail
+    profile: Profil
+    next: "Next, you may want to"
+    auth_guides: "Check out the authentication guides"
+    modify_page: "Modify this page"
+    after_signin: "Change where you go after sign in"

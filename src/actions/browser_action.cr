@@ -17,12 +17,17 @@ abstract class BrowserAction < Lucky::Action
   # 'include Auth::AllowGuests' in individual actions to skip sign in.
   include Auth::RequireSignIn
 
+  def translator
+    Translator.new(current_user)
+  end
+  expose translator
+
   # `expose` means that `current_user` will be passed to pages automatically.
   #
   # In default Lucky apps, the `MainLayout` declares it `needs current_user : User`
   # so that any page that inherits from MainLayout can use the `current_user`
   expose current_user
-
+ 
   # This method tells Authentic how to find the current user
   private def find_current_user(id) : User?
     UserQuery.new.id(id).first?

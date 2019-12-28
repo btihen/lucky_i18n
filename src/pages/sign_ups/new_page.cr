@@ -1,17 +1,18 @@
 class SignUps::NewPage < AuthLayout
   needs operation : SignUpUser
+  needs translator : Translator
 
   def content
-    h1 "Sign Up"
+    h1 @translator.t("auth.sign_up")
     render_sign_up_form(@operation)
   end
 
   private def render_sign_up_form(op)
     form_for SignUps::Create do
       sign_up_fields(op)
-      submit "Sign Up", flow_id: "sign-up-button"
+      submit @translator.t("auth.sign_up"), flow_id: "sign-up-button"
     end
-    link "Sign in instead", to: SignIns::New
+    link @translator.t("auth.sign_in"), to: SignIns::New
   end
 
   private def sign_up_fields(op)
