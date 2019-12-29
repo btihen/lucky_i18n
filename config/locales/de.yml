@@ -2,10 +2,15 @@
 de:
   auth:
     sign_in: Anmeldung
+    sign_in_success: "Erfolgreiche Anmeldung"
+    sign_in_failure: "Fehlerhafte Anmeldung"
     sign_up: Anmelden
     sign_out: Abmelden
-    update_pwd: "Kennwort aktualisieren"
-    reset_pwd_request: "Kennwort zurücksetzen"
+    signed_out: "Sie sind Abgemeldet"
+    pwd_update: "Kennwort aktualisieren"
+    pwd_update_success: "Ihr Kennwort ist aktualisiert"
+    pwd_reset_request: "Kennwort zurücksetzen"
+    pwd_reset_req_success: "Ein Mail mit hinweisen um Ihr Kennwort zurücksetzen soll bald ankommen"
   default:
     page_title: Wilkommen
   me:

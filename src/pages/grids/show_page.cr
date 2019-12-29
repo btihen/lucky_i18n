@@ -1,6 +1,6 @@
 class Grids::ShowPage < MainLayout
   needs grid : Grid
-  quick_def page_title, @grid.rows
+  quick_def page_title, "#{@grid.rows} x #{@grid.cols}"
 
   def content
     link "Back to all Grids", Grids::Index

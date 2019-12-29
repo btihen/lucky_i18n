@@ -1,3 +1,5 @@
+require "../translator"
+
 abstract class MainLayout
   include Translator
   include Lucky::HTMLPage
@@ -21,7 +23,7 @@ abstract class MainLayout
     html_doctype
 
     html lang: user_lang do
-      # mount Shared::LayoutHead.new(page_title: page_title, context: @context)
+      mount Shared::LayoutHead.new(page_title: page_title, context: @context)
 
       body do
         mount Shared::FlashMessages.new(@context.flash)

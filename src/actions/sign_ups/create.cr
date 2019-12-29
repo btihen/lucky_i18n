@@ -4,11 +4,11 @@ class SignUps::Create < BrowserAction
   route do
     SignUpUser.create(params) do |operation, user|
       if user
-        flash.info = "Thanks for signing up"
+        flash.success = t("auth.sign_in_success")
         sign_in(user)
         redirect to: Home::Index
       else
-        flash.info = "Couldn't sign you up"
+        flash.failure = t("auth.sign_in_failure")
         html NewPage, operation: operation
       end
     end

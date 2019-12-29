@@ -5,7 +5,7 @@ class PasswordResetRequests::Create < BrowserAction
     RequestPasswordReset.new(params).submit do |operation, user|
       if user
         PasswordResetRequestEmail.new(user).deliver
-        flash.success = "You should receive an email on how to reset your password shortly"
+        flash.success = t("auth.pwd_reset_req_success")
         redirect SignIns::New
       else
         html NewPage, operation: operation

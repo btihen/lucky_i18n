@@ -1,4 +1,7 @@
+require "../translator"
+
 abstract class AuthLayout
+  include Translator
   include Lucky::HTMLPage
 
   abstract def content
@@ -9,13 +12,13 @@ abstract class AuthLayout
   # Add a `page_title` method to pages to override it. You can also remove
   # This method so every page is required to have its own page title.
   def page_title
-    "Welcome"
+    t("default.page_title")
   end
 
   def render
     html_doctype
 
-    html lang: "en" do
+    html lang: user_lang do
       mount Shared::LayoutHead.new(page_title: page_title, context: @context)
 
       body do
