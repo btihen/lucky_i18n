@@ -5,6 +5,9 @@ class RequestPasswordReset < Avram::Operation
   include UserFromEmail
   include Translator
 
+  # quick_def current_user, nil
+  quick_def user_lang, LANGUAGE_DEFAULT
+
   attribute email : String
 
   # Run validations and yield the operation and the user if valid

@@ -1,8 +1,11 @@
-require "../../translator"
+# require "../../translator"
 
 class Errors::ShowPage
   include Lucky::HTMLPage
   include Translator
+
+  # in error conditions we don't know if we have a current_user - so we set user_lang to the default language
+  quick_def user_lang, LANGUAGE_DEFAULT
 
   needs message : String
   needs status : Int32

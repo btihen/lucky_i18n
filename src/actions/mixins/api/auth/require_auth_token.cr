@@ -1,4 +1,4 @@
-require "../../../../translator"
+# require "../../../../translator"
 
 module Api::Auth::RequireAuthToken
   include Translator

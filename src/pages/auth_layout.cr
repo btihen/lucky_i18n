@@ -7,6 +7,10 @@ abstract class AuthLayout
   abstract def content
   abstract def page_title
 
+  # we don't have a current_user (yet) - so we set user_lang to the default language
+  # TODO: figure out how to get JS on Frontend to influence login language choice
+  quick_def user_lang, LANGUAGE_DEFAULT
+
   # The default page title. It is passed to `Shared::LayoutHead`.
   #
   # Add a `page_title` method to pages to override it. You can also remove

@@ -8,6 +8,8 @@ class SignIns::Create < BrowserAction
         flash.success = t("auth.sign_in_success")
         Authentic.redirect_to_originally_requested_path(self, fallback: Home::Index)
       else
+        # might be needed when user auth fails - but compiles without
+        # user_lang = LANGUAGE_DEFAULT
         flash.failure = t("auth.sign_in_failure")
         html NewPage, operation: operation
       end

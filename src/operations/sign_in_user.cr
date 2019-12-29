@@ -6,6 +6,9 @@ class SignInUser < Avram::Operation
   include UserFromEmail
   include Translator
 
+  # quick_def current_user, nil
+  quick_def user_lang, LANGUAGE_DEFAULT
+
   attribute email : String
   attribute password : String
 

@@ -8,6 +8,8 @@ class SignUps::Create < BrowserAction
         sign_in(user)
         redirect to: Home::Index
       else
+        # might be needed when user auth fails - but compiles without
+        # user_lang = LANGUAGE_DEFAULT
         flash.failure = t("auth.sign_in_failure")
         html NewPage, operation: operation
       end

@@ -15,7 +15,7 @@ module Translator
     I18n.translate(key, user_lang, count)
   end
 
-  def user_lang(current_user=nil)
+  def user_lang
     current_user.try(&.lang) || LANGUAGE_DEFAULT
   end
 end
