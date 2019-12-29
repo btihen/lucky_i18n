@@ -1,7 +1,11 @@
 module Translator
 
-  DEFAULT_LANGUAGE = "en"
-  AVAILABLE_LANGUAGES = ["en", "de"]
+  LANGUAGE_DEFAULT = "en"
+  LANGUAGES_AVAILABLE = ["en", "de"]
+  # SELECTOR
+  # The first element is the display name
+  # The second element is the value sent to the form
+  LANGUAGES_SELECTOR_LIST = [{"English", "en"}, {"Deutsch", "de"}]
 
   def t(key : String)
     I18n.translate(key, user_lang)
@@ -12,6 +16,6 @@ module Translator
   end
 
   def user_lang(current_user=nil)
-    current_user.try(&.lang) || DEFAULT_LANGUAGE
+    current_user.try(&.lang) || LANGUAGE_DEFAULT
   end
 end

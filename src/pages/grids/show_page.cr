@@ -3,7 +3,7 @@ class Grids::ShowPage < MainLayout
   quick_def page_title, "#{@grid.rows} x #{@grid.cols}"
 
   def content
-    link "Back to all Grids", Grids::Index
+    link t("action.back_to_index"), Grids::Index
     h1 @grid.rows
     render_actions
     render_grid_fields
@@ -11,11 +11,11 @@ class Grids::ShowPage < MainLayout
 
   def render_actions
     section do
-      link "Edit", Grids::Edit.with(@grid.id)
+      link t("action.edit"), Grids::Edit.with(@grid.id)
       text " | "
-      link "Delete",
+      link t("action.delete"),
         Grids::Delete.with(@grid.id),
-        data_confirm: "Are you sure?"
+        data_confirm: t("action.confirm")
     end
   end
 

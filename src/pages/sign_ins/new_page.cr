@@ -2,19 +2,18 @@ class SignIns::NewPage < AuthLayout
   needs operation : SignInUser
 
   def content
-    h1 "Sign In"
-    # h1 I18n.t("sign_in")
+    h1 t("auth.sign_in")
     render_sign_in_form(@operation)
   end
 
   private def render_sign_in_form(op)
     form_for SignIns::Create do
       sign_in_fields(op)
-      submit "Sign In", flow_id: "sign-in-button"
+      submit t("auth.sign_in"), flow_id: "sign-in-button"
     end
-    link "Reset password", to: PasswordResetRequests::New
+    link t("auth.pwd_reset"), to: PasswordResetRequests::New
     text " | "
-    link "Sign up", to: SignUps::New
+    link t("auth.sign_up"), to: SignUps::New
   end
 
   private def sign_in_fields(op)

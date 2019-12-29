@@ -1,9 +1,9 @@
 class Grids::NewPage < MainLayout
   needs operation : SaveGrid
-  quick_def page_title, "New"
+  quick_def page_title, t("action.new")
 
   def content
-    h1 "New"
+    h1 t("action.new")
     render_grid_form(@operation)
   end
 
@@ -12,7 +12,7 @@ class Grids::NewPage < MainLayout
       mount Shared::Field.new(op.rows), &.text_input(autofocus: "true")
       mount Shared::Field.new(op.cols)
 
-      submit "Save", data_disable_with: "Saving..."
+      submit t("action.save"), data_disable_with: t("action.saving")
     end
   end
 end

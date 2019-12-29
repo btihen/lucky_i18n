@@ -1,10 +1,10 @@
 class Grids::EditPage < MainLayout
   needs operation : SaveGrid
   needs grid : Grid
-  quick_def page_title, "Edit"
+  quick_def page_title, t("action.edit")
 
   def content
-    h1 "Edit"
+    h1 t("action.edit")
     render_grid_form(@operation)
   end
 
@@ -13,7 +13,7 @@ class Grids::EditPage < MainLayout
       mount Shared::Field.new(op.rows), &.text_input(autofocus: "true")
       mount Shared::Field.new(op.cols)
 
-      submit "Update", data_disable_with: "Updating..."
+      submit t("action.update"), data_disable_with: t("action.updating")
     end
   end
 end

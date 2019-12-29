@@ -1,15 +1,18 @@
+require "../../translator"
+
 class Errors::ShowPage
   include Lucky::HTMLPage
+  include Translator
 
   needs message : String
   needs status : Int32
 
   def render
     html_doctype
-    html lang: "en" do
+    html lang: user_lang do
       head do
         utf8_charset
-        title "Something went wrong"
+        title t("error.title")
         load_lato_font
         normalize_styles
         error_page_styles
@@ -22,7 +25,7 @@ class Errors::ShowPage
 
           ul class: "helpful-links" do
             li do
-              link "Try heading back to home", to: "/", class: "helpful-link"
+              link t("error.try_home"), to: "/", class: "helpful-link"
             end
           end
         end

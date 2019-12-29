@@ -1,10 +1,10 @@
 class Grids::IndexPage < MainLayout
   needs grids : GridQuery
-  quick_def page_title, "All"
+  quick_def page_title, t("action.index_title")
 
   def content
-    h1 "All Grids"
-    link "New Grid", to: Grids::New
+    h1 t("action.index_title")
+    link t("action.create_new"), to: Grids::New
     render_grids
   end
 

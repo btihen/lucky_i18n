@@ -3,7 +3,7 @@ class PasswordResets::NewPage < AuthLayout
   needs user_id : Int64
 
   def content
-    h1 "Reset your password"
+    h1 t("auth.pwd_reset")
     render_password_reset_form(@operation)
   end
 
@@ -12,7 +12,7 @@ class PasswordResets::NewPage < AuthLayout
       mount Shared::Field.new(op.password), &.password_input(autofocus: "true")
       mount Shared::Field.new(op.password_confirmation), &.password_input
 
-      submit "Update Password", flow_id: "update-password-button"
+      submit t("auth.pwd_update"), flow_id: "update-password-button"
     end
   end
 end

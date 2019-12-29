@@ -1,22 +1,52 @@
 # config/locales/de.yml
 de:
+  action:
+    save_success: "The record has been saved"
+    update_success: "The record has been updated"
+    delete_success: "Deleted the record"
+    index_title: "All Records"
+    create_new: "New Record"
+    new: New
+    edit: Edit
+    delete: Delete
+    confirm: "Are you sure?"
+    update: Update
+    updating: "Updating..."
+    save: Save
+    saving: "Saving..."
+    back: Back
+    back_to_index: "Back to All"
   auth:
-    sign_in: Anmeldung
-    sign_in_success: "Erfolgreiche Anmeldung"
-    sign_in_failure: "Fehlerhafte Anmeldung"
-    sign_up: Anmelden
-    sign_out: Abmelden
-    signed_out: "Sie sind Abgemeldet"
-    pwd_update: "Kennwort aktualisieren"
-    pwd_update_success: "Ihr Kennwort ist aktualisiert"
-    pwd_reset_request: "Kennwort zurücksetzen"
-    pwd_reset_req_success: "Ein Mail mit hinweisen um Ihr Kennwort zurücksetzen soll bald ankommen"
+    sign_in: "Sign In"
+    sign_in_success: "You're now signed in"
+    sign_in_failure: "Sign in failed"
+    sign_up: "Sign up"
+    sign_up_success: "Thanks for signing up"
+    sign_up_failure: "Couldn't sign you up"
+    signed_out: "You have been signed out"
+    pwd_update: "Update Password"
+    pwd_update_success: "Your password has been reset"
+    pwd_reset: "Password Reset"
+    pwd_reset_request: "Reset your Password"
+    pwd_reset_req_success: "You should receive an email on how to reset your password shortly"
+  auth_token:
+    not_authenticated: "Not Authenticated."
+    invalid: "The provided authentication token was incorrect."
+    missing: "An authentication token is required. Please include a token in an 'auth_token' param or 'Authorization' header."
   default:
-    page_title: Wilkommen
-  me:
-    email: Mail
-    profile: Profil
-    next: "Zunächst bitte kontrolliere"
-    auth_guides: "Bitte kontrolliere die 'Authentication Guides'"
-    modify_page: "Um diese Seite zu Ändern"
-    after_signin: "Eine andere Seite nach anmelden"
+    page_name: Welcome
+  error:
+    title: "Something went wrong"
+    try_home: "Try heading back to home"
+    locked_out: "Locked-out"
+    auth_incorrect: "is wrong"
+    form_not_valid: "It looks like the form is not valid"
+    not_in_system: "is not in our system"
+  user:
+    email: E-Mail
+    profile: Profile
+    next: "Next, you may want to"
+    auth_guides: "Check out the 'Authentication Guides'"
+    modify_page: "Modify this page"
+    after_signin: "Change where you go after sign in"
+    preferred_language: "Preferred Language"

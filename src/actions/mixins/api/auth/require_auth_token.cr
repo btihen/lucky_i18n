@@ -1,4 +1,8 @@
+require "../../../../translator"
+
 module Api::Auth::RequireAuthToken
+  include Translator
+
   macro included
     before require_auth_token
   end
@@ -13,16 +17,16 @@ module Api::Auth::RequireAuthToken
 
   private def auth_error_json
     ErrorSerializer.new(
-      message: "Not authenticated.",
+      message: t("auth_token.not_authenticated"),
       details: auth_error_details
     )
   end
 
   private def auth_error_details : String
     if auth_token
-      "The provided authentication token was incorrect."
+      t("auth_token.invalid")
     else
-      "An authentication token is required. Please include a token in an 'auth_token' param or 'Authorization' header."
+      t("auth_token.invalid")
     end
   end
 
