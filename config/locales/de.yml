@@ -1,2 +1,17 @@
+# config/locales/de.yml
 de:
-  sign_in: Einloggen
+  auth:
+    sign_in: Anmeldung
+    sign_up: Anmelden
+    sign_out: Abmelden
+    update_pwd: "Kennwort aktualisieren"
+    reset_pwd_request: "Kennwort zurücksetzen"
+  default:
+    page_title: Wilkommen
+  me:
+    email: Mail
+    profile: Profil
+    next: "Zunächst bitte kontrolliere"
+    auth_guides: "Bitte kontrolliere die 'Authentication Guides'"
+    modify_page: "Um diese Seite zu Ändern"
+    after_signin: "Eine andere Seite nach anmelden"
