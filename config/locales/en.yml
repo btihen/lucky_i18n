@@ -9,6 +9,7 @@ en:
     sign_up_failure: "Couldn't sign you up"
     signed_out: "You have been signed out"
     pwd_update: "Update Password"
+    pwd_update_success: "Your password has been reset"
     pwd_reset_request: "Reset Password"
     pwd_reset_req_success: "You should receive an email on how to reset your password shortly"
   default:
