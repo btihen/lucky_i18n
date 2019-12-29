@@ -1,0 +1,18 @@
+# fr.yml
+fr:
+  auth:
+    sign_in: "Se connecter" # "S'identifier"
+    sign_up: "S'inscrire"
+    sign_out: "Déconnexion"
+    update_pwd: "Mettre à jour le mot de passe"
+    reset_pwd_request: "Réinitialiser le mot de passe"
+    welcome: "Bienvenu/e"
+  default:
+    page_title: "Bienvenu/e"
+  me:
+    email: FR-Mail
+    profile: FR-Profil
+    next: "FR-Next, you may want to"
+    auth_guides: "FR-Check out the authentication guides"
+    modify_page: "FR-Modify this page"
+    after_signin: "FR-Change where you go after sign in"

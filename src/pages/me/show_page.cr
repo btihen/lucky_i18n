@@ -1,5 +1,5 @@
 class Me::ShowPage < MainLayout
-  needs translator : Translator
+  # needs translator : Translator
   def content
     h1 @translator.t("me.profile")
     h3 "#{@translator.t("me.email")}:  #{@current_user.email}"

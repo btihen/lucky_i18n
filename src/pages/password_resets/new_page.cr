@@ -1,6 +1,6 @@
 class PasswordResets::NewPage < AuthLayout
   needs operation : ResetPassword
-  needs translator : Translator
+  # needs translator : Translator
   needs user_id : Int64
 
   def content

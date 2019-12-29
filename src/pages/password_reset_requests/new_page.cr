@@ -1,6 +1,6 @@
 class PasswordResetRequests::NewPage < AuthLayout
   needs operation : RequestPasswordReset
-  needs translator : Translator
+  # needs translator : Translator
 
   def content
     h1 @translator.t("auth.reset_pwd_request")

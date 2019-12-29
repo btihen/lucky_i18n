@@ -1,6 +1,6 @@
 class SignIns::NewPage < AuthLayout
   needs operation : SignInUser
-  needs translator : Translator
+  # needs translator : Translator
 
   def content
     h1 @translator.t("auth.sign_in")

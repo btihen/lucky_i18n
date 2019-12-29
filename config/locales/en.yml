@@ -3,8 +3,11 @@ en:
   auth:
     sign_in: "Sign-In"
     sign_up: "Sign-up"
+    sign_out: "Sign-out"
     update_pwd: "Update Password"
     reset_pwd_request: "Reset Password"
+  default:
+    page_title: Welcome
   me:
     email: Mail
     profile: Profil

@@ -9,7 +9,7 @@ class SignUpUser < User::SaveOperation
 
   before_save do
     validate_uniqueness_of email
-    validate_inclusion_of lang, in: ["en", "de", "fr", "it"]
+    validate_inclusion_of lang, in: Translator::AVAILABLE_LANGUAGES
     Authentic.copy_and_encrypt password, to: encrypted_password
   end
 end
