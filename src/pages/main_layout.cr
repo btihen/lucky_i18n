@@ -7,9 +7,10 @@ abstract class MainLayout
   # 'needs current_user : User' makes it so that the current_user
   # is always required for pages using MainLayout
   needs current_user : User
-  
-  # we also have to make @current_user available as current_user
-  quick_def current_user, @current_user
+
+  # make @current_user available as current_user
+  # quick_def current_user, @current_user
+  getter current_user
 
   abstract def content
   abstract def page_title
