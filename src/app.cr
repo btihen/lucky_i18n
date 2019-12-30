@@ -3,6 +3,7 @@ require "./shards"
 # Load the asset manifest in public/mix-manifest.json
 Lucky::AssetHelpers.load_manifest
 
+require "./translator"
 require "./app_database"
 require "./models/base_model"
 require "./models/mixins/**"
@@ -24,4 +25,3 @@ require "../config/env"
 require "../config/**"
 require "../db/migrations/**"
 require "./app_server"
-require "./translator"

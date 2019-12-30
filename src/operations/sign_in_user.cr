@@ -1,5 +1,3 @@
-require "../translator"
-
 class SignInUser < Avram::Operation
   param_key :user
   # You can modify this in src/operations/mixins/user_from_email.cr

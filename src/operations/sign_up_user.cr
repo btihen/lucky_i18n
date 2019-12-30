@@ -1,5 +1,3 @@
-require "../translator"
-
 class SignUpUser < User::SaveOperation
   include Translator
 

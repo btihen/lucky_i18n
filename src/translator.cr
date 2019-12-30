@@ -15,6 +15,8 @@ module Translator
     I18n.translate(key, user_lang, count)
   end
 
+  # in places where current_user / user isn't available be sure to override this method with
+  # 'quick_def user_lang, LANGUAGE_DEFAULT' or 'quick_def current_user, nil' (not recommended)
   def user_lang
     current_user.try(&.lang) || LANGUAGE_DEFAULT
   end
