@@ -9,7 +9,7 @@ class Errors::ShowPage
     html lang: "en" do
       head do
         utf8_charset
-        title "Something went wrong"
+        title I18n.t("error.title", Translator::DEFAULT_LANGUAGE)
         load_lato_font
         normalize_styles
         error_page_styles
@@ -22,7 +22,7 @@ class Errors::ShowPage
 
           ul class: "helpful-links" do
             li do
-              link "Try heading back to home", to: "/", class: "helpful-link"
+              link I18n.t("error.try_home", Translator::DEFAULT_LANGUAGE), to: "/", class: "helpful-link"
             end
           end
         end

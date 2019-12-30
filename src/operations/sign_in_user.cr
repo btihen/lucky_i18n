@@ -1,3 +1,5 @@
+require "../components/translator"
+
 class SignInUser < Avram::Operation
   param_key :user
   # You can modify this in src/operations/mixins/user_from_email.cr
@@ -28,13 +30,13 @@ class SignInUser < Avram::Operation
   private def validate_credentials(user)
     if user
       unless Authentic.correct_password?(user, password.value.to_s)
-        password.add_error "is wrong"
+        password.add_error I18n.t("error.auth_incorrect", Translator::DEFAULT_LANGUAGE)
       end
     else
       # Usually ok to say that an email is not in the system:
       # https://kev.inburke.com/kevin/invalid-username-or-password-useless/
       # https://github.com/luckyframework/lucky_cli/issues/192
-      email.add_error "is not in our system"
+      email.add_error I18n.t("error.not_in_system", Translator::DEFAULT_LANGUAGE)
     end
   end
 end

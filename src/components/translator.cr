@@ -3,6 +3,7 @@ class Translator
 
   DEFAULT_LANGUAGE = "en"
   AVAILABLE_LANGUAGES = ["en", "de"]
+  LANGUAGES_SELECTOR_LIST = [{"English", "en"}, {"Deutsch", "de"}]
 
   def initialize(user : User? = nil)
     @lang = user.try(&.lang) || DEFAULT_LANGUAGE

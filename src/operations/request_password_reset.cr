@@ -1,3 +1,5 @@
+require "../components/translator"
+
 class RequestPasswordReset < Avram::Operation
   # You can modify this in src/operations/mixins/user_from_email.cr
   include UserFromEmail
@@ -19,7 +21,7 @@ class RequestPasswordReset < Avram::Operation
   def validate(user : User?)
     validate_required email
     if user.nil?
-      email.add_error "is not in our system"
+      email.add_error I18n.t("error.not_in_system", Translator::DEFAULT_LANGUAGE)
     end
   end
 end

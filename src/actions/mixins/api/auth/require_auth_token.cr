@@ -13,16 +13,16 @@ module Api::Auth::RequireAuthToken
 
   private def auth_error_json
     ErrorSerializer.new(
-      message: "Not authenticated.",
+      message: I18n.t("auth_token.not_authenticated", Translator::DEFAULT_LANGUAGE),
       details: auth_error_details
     )
   end
 
   private def auth_error_details : String
     if auth_token
-      "The provided authentication token was incorrect."
+      I18n.t("auth_token.invalid", Translator::DEFAULT_LANGUAGE)
     else
-      "An authentication token is required. Please include a token in an 'auth_token' param or 'Authorization' header."
+      I18n.t("auth_token.invalid", Translator::DEFAULT_LANGUAGE)
     end
   end
 
