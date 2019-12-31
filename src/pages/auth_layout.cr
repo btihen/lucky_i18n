@@ -1,4 +1,4 @@
-require "../translator"
+# require "../translator"
 
 abstract class AuthLayout
   include Translator

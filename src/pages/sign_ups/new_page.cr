@@ -16,10 +16,13 @@ class SignUps::NewPage < AuthLayout
   end
 
   private def sign_up_fields(op)
+    # the dropdown selector for the languages
     label_for op.lang, t("user.preferred_language")
     select_input(op.lang) do
       options_for_select(op.lang, LANGUAGES_SELECTOR_LIST)
     end
+    # end of the dropdown for the languages
+
     mount Shared::Field.new(op.email), &.email_input(autofocus: "true")
     mount Shared::Field.new(op.password), &.password_input
     mount Shared::Field.new(op.password_confirmation), &.password_input

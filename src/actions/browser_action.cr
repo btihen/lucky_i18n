@@ -1,5 +1,3 @@
-require "../translator"
-
 abstract class BrowserAction < Lucky::Action
   include Translator
   include Lucky::ProtectFromForgery

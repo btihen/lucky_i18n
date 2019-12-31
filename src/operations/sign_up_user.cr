@@ -1,5 +1,5 @@
 class SignUpUser < User::SaveOperation
-  include Translator
+  # include Translator
 
   param_key :user
   # Change password validations in src/operations/mixins/password_validations.cr
@@ -11,7 +11,7 @@ class SignUpUser < User::SaveOperation
 
   before_save do
     validate_uniqueness_of email
-    validate_inclusion_of lang, in: LANGUAGES_AVAILABLE
+    validate_inclusion_of lang, in: Translator::LANGUAGES_AVAILABLE
 
     Authentic.copy_and_encrypt password, to: encrypted_password
   end

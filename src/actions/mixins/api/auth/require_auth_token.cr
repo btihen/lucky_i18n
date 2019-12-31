@@ -1,5 +1,3 @@
-# require "../../../../translator"
-
 module Api::Auth::RequireAuthToken
   include Translator
 
@@ -16,17 +14,20 @@ module Api::Auth::RequireAuthToken
   end
 
   private def auth_error_json
+    # since we have no valid user define `user_lang`
+    user_lang = LANGUAGE_DEFAULT
     ErrorSerializer.new(
-      message: t("auth_token.not_authenticated"),
-      details: auth_error_details
+      message: t("auth_token.not_authenticated"), details: auth_error_details
     )
   end
 
   private def auth_error_details : String
+    # since we have no valid user define `user_lang`
+    user_lang = LANGUAGE_DEFAULT
     if auth_token
       t("auth_token.invalid")
     else
-      t("auth_token.invalid")
+      t("auth_token.missing")
     end
   end
 
